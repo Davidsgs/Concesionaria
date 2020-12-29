@@ -3,4 +3,4 @@ Mi respuesta diseñara para resolver el ejercicio presentado en: https://docs.go
 
 Diagrama de Clases:
 
-<img src="images/Diagrama.png"/>
+<img src="Images/Diagrama.png"/>
