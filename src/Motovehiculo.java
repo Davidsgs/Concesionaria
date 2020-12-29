@@ -1,7 +1,7 @@
 public class Motovehiculo extends Vehiculos {
     private int cilindrada;
 
-    public Motovehiculo(String marca, String modelo, float precio, int cilindrada) {
+    public Motovehiculo(String marca, String modelo, String precio, int cilindrada) {
         super(marca, modelo, precio);
         this.cilindrada = cilindrada;
     }
@@ -10,13 +10,9 @@ public class Motovehiculo extends Vehiculos {
         return cilindrada;
     }
 
-    public String getCilindradaString() {
-        return String.valueOf(cilindrada);
-    }
-
     @Override
     public String caracteristicas() {
         return "Marca: " + getMarca() + "// Modelo: " + getModelo() +
-                "// Puertas: " + getCilindradaString() + "// Precio: " + getPrecioString() + "";
+                "// Cilindrada: " + getCilindrada() + "cc // Precio: $" + getPrecio();
     }
 }

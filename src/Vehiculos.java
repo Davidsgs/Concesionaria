@@ -4,12 +4,14 @@ import java.math.RoundingMode;
 public abstract class Vehiculos {
     private String marca;
     private String modelo;
-    private float precio;
+    private String precio;
+    private double precioDouble;
 
-    public Vehiculos(String marca, String modelo, float precio){
+    public Vehiculos(String marca, String modelo, String precio){
         this.marca = marca;
         this.modelo = modelo;
         this.precio = precio;
+        this.precioDouble = transformarPrecioADouble(precio);
     }
 
     public String getMarca() {
@@ -20,14 +22,27 @@ public abstract class Vehiculos {
         return modelo;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
-    public String getPrecioString() {
-        return String.valueOf(precio);
+    public double getPrecioDouble() {
+        return precioDouble;
+    }
+
+    public double transformarPrecioADouble(String unPrecioString){
+        String parteEntera = unPrecioString.substring(0, unPrecioString.indexOf(','));
+        parteEntera = parteEntera.replace(".","");
+        String parteDecimal = unPrecioString.substring(unPrecioString.indexOf(',') + 1, unPrecioString.length() - 1);
+        return Double.parseDouble(parteEntera) + (Double.parseDouble(parteDecimal) / 10);
     }
 
     public abstract String caracteristicas();
+
+    @Override
+    public String toString(){
+        return getMarca() + " " + getModelo();
+    }
+
 }
 
