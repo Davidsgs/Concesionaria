@@ -1,7 +1,7 @@
 public class Automotor extends Vehiculos {
     private int cantPuertas;
 
-    public Automotor(String marca, String modelo, float precio, int cantPuertas) {
+    public Automotor(String marca, String modelo, String precio, int cantPuertas) {
         super(marca, modelo, precio);
         this.cantPuertas = cantPuertas;
     }
@@ -12,7 +12,7 @@ public class Automotor extends Vehiculos {
 
     @Override
     public String caracteristicas() {
-        return "Marca: " + getMarca() + "// Modelo: " + getModelo() +
-                "// Puertas: " + getCantPuertas() + "// Precio: $" + getPrecioString() + "";
+        return "Marca: " + getMarca() + " // Modelo: " + getModelo() +
+                " // Puertas: " + getCantPuertas() + " // Precio: $" + getPrecio();
     }
 }
