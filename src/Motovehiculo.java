@@ -12,7 +12,7 @@ public class Motovehiculo extends Vehiculos {
 
     @Override
     public String caracteristicas() {
-        return "Marca: " + getMarca() + "// Modelo: " + getModelo() +
-                "// Cilindrada: " + getCilindrada() + "cc // Precio: $" + getPrecio();
+        return "Marca: " + getMarca() + " // Modelo: " + getModelo() +
+                " // Cilindrada: " + getCilindrada() + "cc // Precio: " + getPrecio();
     }
 }

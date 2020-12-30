@@ -10,7 +10,7 @@ public abstract class Vehiculos {
     public Vehiculos(String marca, String modelo, String precio){
         this.marca = marca;
         this.modelo = modelo;
-        this.precio = precio;
+        this.precio = "$" + precio;
         this.precioDouble = transformarPrecioADouble(precio);
     }
 

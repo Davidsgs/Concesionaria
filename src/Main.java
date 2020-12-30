@@ -9,24 +9,22 @@ public class Main {
         List<Vehiculos> listaDeVehiculos = Arrays.asList(
                 new Automotor("Peugeot","206","200.000,00",4),
                 new Motovehiculo("Honda","Titan","60.000,00",125),
-                new Automotor("Peugeot","208","250.000,00",4),
+                new Automotor("Peugeot","208","250.000,00",5),
                 new Motovehiculo("Yamaha","YBR","80.500,50",160)
         );
 
-        listaDeVehiculos.stream().forEach( vehiculo -> {
+        listaDeVehiculos.forEach( vehiculo -> {
             System.out.println(vehiculo.caracteristicas());
         });
 
         System.out.println("=============================");
 
-        Vehiculos elMasCaro = listaDeVehiculos.stream()
-                .collect(Collectors.maxBy(Comparator.comparingDouble(Vehiculos::getPrecioDouble)))
+        Vehiculos elMasCaro = listaDeVehiculos.stream().max(Comparator.comparingDouble(Vehiculos::getPrecioDouble))
                 .get();
 
         System.out.println("Vehículo más caro: " + elMasCaro);
 
-        Vehiculos elMasBarato = listaDeVehiculos.stream()
-                .collect(Collectors.minBy(Comparator.comparingDouble(Vehiculos::getPrecioDouble)))
+        Vehiculos elMasBarato = listaDeVehiculos.stream().min(Comparator.comparingDouble(Vehiculos::getPrecioDouble))
                 .get();
 
         System.out.println("Vehículo más barato: " + elMasBarato);
@@ -37,7 +35,7 @@ public class Main {
         System.out.println("Vehículo que contiene en el modelo la letra ‘Y’: " + queContieneLetraY + " " + queContieneLetraY.getPrecio());
 
         System.out.println("=============================");
-
+        System.out.println("Vehículos ordenados por precio de mayor a menor:");
         listaDeVehiculos.stream().sorted(Comparator.comparingDouble(Vehiculos::getPrecioDouble).reversed()).forEach(System.out::println);
     }
 

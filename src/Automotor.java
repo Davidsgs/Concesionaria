@@ -13,6 +13,6 @@ public class Automotor extends Vehiculos {
     @Override
     public String caracteristicas() {
         return "Marca: " + getMarca() + " // Modelo: " + getModelo() +
-                " // Puertas: " + getCantPuertas() + " // Precio: $" + getPrecio();
+                " // Puertas: " + getCantPuertas() + " // Precio: " + getPrecio();
     }
 }
